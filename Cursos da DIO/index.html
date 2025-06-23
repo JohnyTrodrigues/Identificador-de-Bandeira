@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador de Bandeira de Cartão</title>
+</head>
+<body>
+    <h2>Identifique a bandeira do cartão</h2>
+    <input type="text" id="cardNumber" placeholder="Digite o número do cartão" maxlength="19">
+    <p id="result"></p>
+    <script src="cardBrand.js"></script>
+    <script>
+        // Atualiza a bandeira em tempo real conforme o usuário digita
+        document.getElementById('cardNumber').addEventListener('input', function() {
+            const number = this.value;
+            const brand = getCardBrand(number);
+            document.getElementById('result').innerText = `Bandeira: ${brand}`;
+        });
+    </script>
+</body>
+</html>
